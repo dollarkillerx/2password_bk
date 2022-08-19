@@ -1,9 +1,9 @@
 package simple
 
 import (
-	"github.com/dollarkillerx/gin-template/internal/conf"
-	"github.com/dollarkillerx/gin-template/internal/pkg/models"
-	"github.com/dollarkillerx/gin-template/internal/utils"
+	"github.com/dollarkillerx/2password/internal/conf"
+	"github.com/dollarkillerx/2password/internal/pkg/models"
+	"github.com/dollarkillerx/2password/internal/utils"
 	"gorm.io/gorm"
 
 	"sync"

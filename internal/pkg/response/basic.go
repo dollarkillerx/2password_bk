@@ -1,8 +1,8 @@
 package response
 
 import (
-	"github.com/dollarkillerx/gin-template/internal/pkg/enum"
-	"github.com/dollarkillerx/gin-template/internal/pkg/errs"
+	"github.com/dollarkillerx/2password/internal/pkg/enum"
+	"github.com/dollarkillerx/2password/internal/pkg/errs"
 	"github.com/gin-gonic/gin"
 )
 

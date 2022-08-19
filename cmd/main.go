@@ -1,8 +1,8 @@
 package main
 
 import (
-	"github.com/dollarkillerx/gin-template/internal/server"
-	"github.com/dollarkillerx/gin-template/internal/utils"
+	"github.com/dollarkillerx/2password/internal/server"
+	"github.com/dollarkillerx/2password/internal/utils"
 
 	"log"
 )

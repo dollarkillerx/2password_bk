@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"github.com/dollarkillerx/gin-template/internal/pkg/models"
+	"github.com/dollarkillerx/2password/internal/pkg/models"
 	"gorm.io/gorm"
 )
 

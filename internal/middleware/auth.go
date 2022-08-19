@@ -1,11 +1,11 @@
 package middleware
 
 import (
-	"github.com/dollarkillerx/gin-template/internal/pkg/enum"
-	"github.com/dollarkillerx/gin-template/internal/pkg/errs"
-	"github.com/dollarkillerx/gin-template/internal/pkg/request"
-	"github.com/dollarkillerx/gin-template/internal/pkg/response"
-	"github.com/dollarkillerx/gin-template/internal/utils"
+	"github.com/dollarkillerx/2password/internal/pkg/enum"
+	"github.com/dollarkillerx/2password/internal/pkg/errs"
+	"github.com/dollarkillerx/2password/internal/pkg/request"
+	"github.com/dollarkillerx/2password/internal/pkg/response"
+	"github.com/dollarkillerx/2password/internal/utils"
 	"github.com/dollarkillerx/jwt"
 	"github.com/gin-gonic/gin"
 

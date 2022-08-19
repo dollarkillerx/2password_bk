@@ -4,11 +4,11 @@ import (
 	"log"
 	"time"
 
-	"github.com/dollarkillerx/gin-template/internal/conf"
-	"github.com/dollarkillerx/gin-template/internal/pkg/errs"
-	"github.com/dollarkillerx/gin-template/internal/pkg/request"
-	"github.com/dollarkillerx/gin-template/internal/pkg/response"
-	"github.com/dollarkillerx/gin-template/internal/utils"
+	"github.com/dollarkillerx/2password/internal/conf"
+	"github.com/dollarkillerx/2password/internal/pkg/errs"
+	"github.com/dollarkillerx/2password/internal/pkg/request"
+	"github.com/dollarkillerx/2password/internal/pkg/response"
+	"github.com/dollarkillerx/2password/internal/utils"
 	"github.com/gin-gonic/gin"
 )
 

@@ -1,9 +1,9 @@
 package utils
 
 import (
-	"github.com/dollarkillerx/gin-template/internal/conf"
-	"github.com/dollarkillerx/gin-template/internal/pkg/enum"
-	"github.com/dollarkillerx/gin-template/internal/pkg/request"
+	"github.com/dollarkillerx/2password/internal/conf"
+	"github.com/dollarkillerx/2password/internal/pkg/enum"
+	"github.com/dollarkillerx/2password/internal/pkg/request"
 	"github.com/dollarkillerx/jwt"
 	"github.com/gin-gonic/gin"
 )

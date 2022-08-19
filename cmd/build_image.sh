@@ -1,9 +1,9 @@
 #!/bin/sh
 
-source_path=./cmd/new_project
+source_path=./cmd
 go_file=main.go
-image_name=new_project
-build_output=new_project
+image_name=password2
+build_output=password2
 version=0.0.1
 
 CGO_ENABLED=0 GOOS="linux" GOARCH="amd64" go build -o $source_path/$build_output $source_path/$go_file

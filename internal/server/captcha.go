@@ -8,9 +8,9 @@ import (
 	"strings"
 
 	"github.com/afocus/captcha"
-	"github.com/dollarkillerx/gin-template/internal/pkg/errs"
-	"github.com/dollarkillerx/gin-template/internal/pkg/response"
-	"github.com/dollarkillerx/gin-template/internal/utils"
+	"github.com/dollarkillerx/2password/internal/pkg/errs"
+	"github.com/dollarkillerx/2password/internal/pkg/response"
+	"github.com/dollarkillerx/2password/internal/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/patrickmn/go-cache"
 )

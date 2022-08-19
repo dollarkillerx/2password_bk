@@ -1,10 +1,11 @@
 version: "3.3"
 services:
-  new_project:
-    image: new_project:0.0.1
-    container_name: new_project
+  password2:
+    image: password2:0.0.1
+    container_name: password2
     restart: always
     volumes:
       - ./configs/:/app/configs
+      - ./static/:/app/static
     ports:
-      - 8084:8084
+      - 8184:8184

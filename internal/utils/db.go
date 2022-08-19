@@ -3,7 +3,7 @@ package utils
 import (
 	"fmt"
 
-	"github.com/dollarkillerx/gin-template/internal/conf"
+	"github.com/dollarkillerx/2password/internal/conf"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
