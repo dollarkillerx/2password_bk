@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  new_project:
+    image: new_project:0.0.1
+    container_name: new_project
+    restart: always
+    volumes:
+      - ./configs/:/app/configs
+    ports:
+      - 8084:8084
