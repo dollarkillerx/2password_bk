@@ -2,7 +2,7 @@ package models
 
 type User struct {
 	BasicModel
-	Account  string `gorm:"type:varchar(300);uniqueIndex" json:"account"`
-	Name     string `gorm:"type:varchar(300)" json:"name"`
-	Password string `gorm:"type:varchar(600)" json:"password"`
+	Account             string `gorm:"type:varchar(300);uniqueIndex" json:"account"`
+	PublicKey           string `gorm:"type:text" json:"public_key"`
+	EncryptedPrivateKey string `gorm:"type:text" json:"encrypted_private_key"`
 }

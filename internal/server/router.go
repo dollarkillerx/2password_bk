@@ -10,6 +10,7 @@ func (s *Server) router() {
 
 	v1 := s.app.Group("/api/v1")
 	v1.GET("captcha", s.showCaptcha)
+	v1.GET("user_info/:account", s.userInfo)
 	v1.POST("login", s.userLogin)
 	v1.POST("registry", s.userRegistry)
 

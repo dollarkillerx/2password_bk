@@ -17,12 +17,12 @@ func (s *Simple) GetUserByAccount(account string) (*models.User, error) {
 	return &uc, nil
 }
 
-func (s *Simple) AccountRegistry(account string, name string, password string) error {
+func (s *Simple) AccountRegistry(account string, publicKey string, encryptedPrivateKey string) error {
 	err := s.DB().Model(&models.User{}).Create(&models.User{
-		BasicModel: models.BasicModel{ID: xid.New().String()},
-		Account:    account,
-		Name:       name,
-		Password:   password,
+		BasicModel:          models.BasicModel{ID: xid.New().String()},
+		Account:             account,
+		PublicKey:           publicKey,
+		EncryptedPrivateKey: encryptedPrivateKey,
 	}).Error
 	if err != nil {
 		return errors.WithStack(err)

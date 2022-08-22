@@ -9,5 +9,5 @@ type Interface interface {
 	DB() *gorm.DB
 
 	GetUserByAccount(account string) (*models.User, error)
-	AccountRegistry(account string, name string, password string) error
+	AccountRegistry(account string, publicKey string, encryptedPrivateKey string) error
 }
