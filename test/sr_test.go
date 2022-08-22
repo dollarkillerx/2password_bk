@@ -5,6 +5,7 @@ import (
 	"crypto/rsa"
 	"crypto/sha256"
 	"crypto/x509"
+	"encoding/json"
 	"encoding/pem"
 	"fmt"
 	"github.com/dollarkillerx/2password/internal/utils"
@@ -102,4 +103,108 @@ func RSASignVer(data, signature, publicKey interface{}) error {
 	}
 	//验证签名
 	return rsa.VerifyPKCS1v15(pubInterface, crypto.SHA256, hashed[:], signatureBytes)
+}
+
+type LoginOption struct {
+	Type     string   `json:"type"`
+	ID       string   `json:"id"`
+	Name     string   `json:"name"`
+	Account  string   `json:"account"`
+	Password string   `json:"password"`
+	Remark   string   `json:"remark"`
+	Url      string   `json:"url"`
+	Img      []string `json:"img"`
+}
+
+type CardOption struct {
+	Type       string   `json:"type"`
+	ID         string   `json:"id"`
+	Name       string   `json:"name"`
+	Holder     string   `json:"holder"` // 持有人
+	Number     string   `json:"number"`
+	Brand      string   `json:"brand"`       // 品牌
+	ExpireDate string   `json:"expire_date"` // 到期时间
+	CCV        string   `json:"ccv"`
+	Remark     string   `json:"remark"`
+	Img        []string `json:"img"`
+}
+
+// 身份
+type IdentityOption struct {
+	Type    string   `json:"type"`
+	ID      string   `json:"id"`
+	Name    string   `json:"name"`
+	Address string   `json:"address"`
+	Remark  string   `json:"remark"`
+	Img     []string `json:"img"`
+}
+
+type NoteOption struct {
+	Type   string   `json:"type"`
+	ID     string   `json:"id"`
+	Name   string   `json:"name"`
+	Remark string   `json:"remark"`
+	Img    []string `json:"img"`
+}
+
+type PasswdStore struct {
+	Logins     []LoginOption    `json:"logins"`
+	Cards      []CardOption     `json:"cards"`
+	Identities []IdentityOption `json:"identities"`
+	Notes      []NoteOption     `json:"notes"`
+
+	LoginsBak     []LoginOption    `json:"logins_bak"`
+	CardsBak      []CardOption     `json:"cards_bak"`
+	IdentitiesBak []IdentityOption `json:"identities_bak"`
+	NotesBak      []NoteOption     `json:"notes_bak"`
+}
+
+func TestV2(t *testing.T) {
+	var p = PasswdStore{
+		Logins: []LoginOption{
+			{
+				Img: []string{""},
+			},
+		},
+		Cards: []CardOption{
+			{
+				Img: []string{""},
+			},
+		},
+		Identities: []IdentityOption{
+			{
+				Img: []string{""},
+			},
+		},
+		Notes: []NoteOption{
+			{
+				Img: []string{""},
+			},
+		},
+		LoginsBak: []LoginOption{
+			{
+				Img: []string{""},
+			},
+		},
+		CardsBak: []CardOption{
+			{
+				Img: []string{""},
+			},
+		},
+		IdentitiesBak: []IdentityOption{
+			{
+				Img: []string{""},
+			},
+		},
+		NotesBak: []NoteOption{
+			{
+				Img: []string{""},
+			},
+		},
+	}
+	indent, err := json.MarshalIndent(p, " ", "  ")
+	if err != nil {
+		log.Fatalln(err)
+	}
+	log.Println(string(indent))
 }
