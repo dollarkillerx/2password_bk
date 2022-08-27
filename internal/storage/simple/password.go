@@ -43,7 +43,7 @@ func (s *Simple) PasswordDataInfo(account string) (pos models.PasswordDataInfo, 
 	return
 }
 
-func (s *Simple) PasswordOption(account string, pType models.PasswordType) (pos []models.PasswordOption, err error) {
+func (s *Simple) PasswordOptionList(account string, pType models.PasswordType) (pos []models.PasswordOption, err error) {
 	err = s.db.Model(&models.PasswordOption{}).
 		Where("account = ?", account).
 		Where("type = ?", pType).Find(&pos).Error

@@ -19,6 +19,7 @@ func (s *Server) router() {
 		pass := internal.Group("/password")
 		{
 			pass.GET("/all_info", PasswordManager(s).allInfo)
+			pass.GET("/list", PasswordManager(s).list)
 			pass.GET("/info/:id", PasswordManager(s).info)
 			pass.POST("/add", PasswordManager(s).add)
 			pass.POST("/delete/:id", PasswordManager(s).delete)

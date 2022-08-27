@@ -12,7 +12,7 @@ type Interface interface {
 	AccountRegistry(account string, publicKey string, encryptedPrivateKey string) error
 
 	PasswordDataInfo(account string) (pos models.PasswordDataInfo, err error)
-	PasswordOption(account string, pType models.PasswordType) (pos []models.PasswordOption, err error)
+	PasswordOptionList(account string, pType models.PasswordType) (pos []models.PasswordOption, err error)
 
 	PasswordData(account string, pID string) (pos models.PasswordOption, err error)
 	DeletePasswordData(account string, pID string) (err error)

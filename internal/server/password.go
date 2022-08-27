@@ -2,6 +2,7 @@ package server
 
 import (
 	"github.com/dollarkillerx/2password/internal/pkg/errs"
+	"github.com/dollarkillerx/2password/internal/pkg/models"
 	"github.com/dollarkillerx/2password/internal/pkg/request"
 	"github.com/dollarkillerx/2password/internal/pkg/response"
 	"github.com/dollarkillerx/2password/internal/utils"
@@ -22,6 +23,23 @@ func (p *passwordManager) allInfo(ctx *gin.Context) {
 	model := utils.GetAuthModel(ctx)
 
 	pos, err := p.s.storage.PasswordDataInfo(model.Account)
+	if err != nil {
+		log.Println(err)
+		response.Return(ctx, errs.SqlSystemError)
+		return
+	}
+
+	response.Return(ctx, pos)
+}
+
+func (p *passwordManager) list(ctx *gin.Context) {
+	model := utils.GetAuthModel(ctx)
+	pType := ctx.Query("type")
+	if pType == "" {
+		response.Return(ctx, errs.BadRequest)
+		return
+	}
+	pos, err := p.s.storage.PasswordOptionList(model.Account, models.PasswordType(pType))
 	if err != nil {
 		log.Println(err)
 		response.Return(ctx, errs.SqlSystemError)
