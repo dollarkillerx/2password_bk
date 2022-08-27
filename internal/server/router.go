@@ -16,7 +16,13 @@ func (s *Server) router() {
 
 	internal := v1.Group("/internal", middleware.UAAuthorization())
 	{
-		internal.GET("/all", s.all)
-		internal.POST("/update", s.update)
+		pass := internal.Group("/password")
+		{
+			pass.GET("/all_info", PasswordManager(s).allInfo)
+			pass.GET("/info/:id", PasswordManager(s).info)
+			pass.POST("/add", PasswordManager(s).add)
+			pass.POST("/delete/:id", PasswordManager(s).delete)
+			pass.POST("/update", PasswordManager(s).update)
+		}
 	}
 }

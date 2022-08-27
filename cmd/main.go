@@ -12,8 +12,8 @@ func main() {
 
 	log.SetFlags(log.LstdFlags | log.Llongfile)
 
-	server := server.NewServer()
-	if err := server.Run(); err != nil {
+	s := server.NewServer()
+	if err := s.Run(); err != nil {
 		log.Fatalln(err)
 	}
 }

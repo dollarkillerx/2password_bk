@@ -27,7 +27,7 @@ var (
 	NotData = Error{
 		HttpCode: 200,
 		Code:     "404",
-		Message:  "Not Data",
+		Message:  "Not Payload",
 	}
 	LoginFailed = Error{
 		Code:    "41001",

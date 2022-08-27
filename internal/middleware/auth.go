@@ -42,6 +42,8 @@ func UAAuthorization() gin.HandlerFunc {
 			return
 		}
 
+		log.Println(tokenStr)
+
 		ctx.Set(enum.AuthModel.String(), tk)
 	}
 }

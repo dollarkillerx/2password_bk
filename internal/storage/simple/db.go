@@ -23,6 +23,7 @@ func NewSimple(conf *conf.PgSQLConfig) (*Simple, error) {
 
 	sql.AutoMigrate(
 		&models.User{},
+		&models.PasswordOption{},
 	)
 
 	return &Simple{
