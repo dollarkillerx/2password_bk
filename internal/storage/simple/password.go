@@ -46,7 +46,7 @@ func (s *Simple) PasswordDataInfo(account string) (pos models.PasswordDataInfo, 
 func (s *Simple) PasswordOptionList(account string, pType models.PasswordType) (pos []models.PasswordOption, err error) {
 	err = s.db.Model(&models.PasswordOption{}).
 		Where("account = ?", account).
-		Where("type = ?", pType).Find(&pos).Error
+		Where("type = ?", pType).Order("created_at desc").Find(&pos).Error
 	if err != nil {
 		log.Println(err)
 		return nil, err
